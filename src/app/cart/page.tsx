@@ -38,11 +38,16 @@ const CartPage = () => {
   const addressItems = useAppSelector((state) => state.user.addressItems);
 
   useEffect(() => {
+    if (!token) {
+      router.push("/login");
+      return;
+    }
     const addressDefault = addressItems?.find(
       (address: TUserAddress) => address.isDefault
     );
     setUserAddress(addressDefault);
-  }, [addressItems]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [token, addressItems]);
 
   const cartItems = useAppSelector((state) => state.cart.cartItems);
   const inputsChecked = useAppSelector((state) => state.cart.inputsChecked);
