@@ -1,4 +1,5 @@
 import baseURL from "@/constants/baseURL";
+import nextURL from "@/constants/nextURL";
 import getSlugFromURL from "@/helpers/getSlugFromURL";
 import type { Metadata } from "next";
 
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: product.objDetail.name,
       description: product.objDetail.description,
       type: "website",
-      images: [process.env.NEXTAUTH_URL + product.objDetail.images[0]],
+      images: [nextURL + product.objDetail.images[0]],
     },
   };
 }
