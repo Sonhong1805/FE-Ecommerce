@@ -1,0 +1,18 @@
+input[name="type"] {
+  display: none;
+}
+
+input[id="office"]:checked + label {
+  border-color: #0094b6;
+}
+input[id="office"]:checked + label svg {
+  color: #0094b6;
+}
+
+input[id="home"]:checked + label {
+  border-color: #ff531d;
+}
+
+input[id="home"]:checked + label svg {
+  color: #ff531d;
+}

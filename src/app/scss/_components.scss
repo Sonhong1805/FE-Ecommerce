@@ -1,0 +1,139 @@
+@layer components {
+  .container {
+    width: 100%;
+    margin: auto;
+    padding-inline: 1.5rem;
+    max-width: 120rem;
+  }
+
+  .col-1 {
+    width: 8.33%;
+  }
+  .col-2 {
+    width: 16.66%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-4 {
+    width: 33.33%;
+  }
+  .col-5 {
+    width: 41.66%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-7 {
+    width: 58.33%;
+  }
+  .col-8 {
+    width: 66.66%;
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-10 {
+    width: 83.33%;
+  }
+  .col-11 {
+    width: 91.66%;
+  }
+  .col-12 {
+    width: 100%;
+  }
+
+  .shadow {
+    box-shadow: 0 1px 3px -2px rgba(0, 0, 0, 0.12),
+      0 1px 2px rgba(0, 0, 0, 0.24);
+
+    &2 {
+      box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    &3 {
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    &4 {
+      box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: black;
+  }
+
+  .opacity-visible {
+    opacity: 0.2;
+    visibility: visible;
+  }
+
+  .opacity-invisible {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .opacity-transition {
+    transition: opacity 0.5s ease;
+  }
+
+  .translate-transition {
+    transition: transform 0.5s ease;
+  }
+
+  .submenu {
+    @apply absolute bg-white top-full py-[2rem] shadow2 -left-3.5 min-w-[26rem] opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-[0.2s];
+
+    .submenu-item {
+      @apply py-[1rem] px-[2rem];
+
+      a {
+        @apply text-gray3 text-[1.4rem];
+      }
+
+      &:hover {
+        @apply bg-[rgba(0,0,0,0.03)];
+      }
+
+      &:hover a {
+        @apply text-[rgba(17,17,17,0.85)];
+      }
+    }
+  }
+
+  .pagination {
+    @apply text-gray5 flex items-center justify-center size-[2.945rem] text-[1.6rem] rounded-full border-2 border-gray5 border-solid cursor-pointer;
+
+    &.active {
+      @apply text-white bg-secondary border-secondary;
+    }
+  }
+
+  .loader {
+    @apply fixed top-0 h-screen w-full bg-black bg-opacity-70 backdrop-blur-sm flex flex-col justify-center items-center z-50;
+
+    & .spinner {
+      width: 50px;
+      padding: 8px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: rgb(73, 161, 254);
+      --_m: conic-gradient(#0000 10%, #000),
+        linear-gradient(#000 0 0) content-box;
+      -webkit-mask: var(--_m);
+      mask: var(--_m);
+      -webkit-mask-composite: source-out;
+      mask-composite: subtract;
+      animation: rotate 1s infinite linear;
+    }
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}
