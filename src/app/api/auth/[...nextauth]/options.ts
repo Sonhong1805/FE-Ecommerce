@@ -10,8 +10,8 @@ export const options: NextAuthOptions = {
       clientSecret: "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",
     }),
     FacebookProvider({
-      clientId: process.env.FACEBOOK_CLIENT_ID as string,
-      clientSecret: process.env.FACEBOOK_CLIENT_SECRET as string,
+      clientId: "407854992235589",
+      clientSecret: "218dae8a6e075455cd6cc9a1714ebe2b",
     }),
   ],
 };
